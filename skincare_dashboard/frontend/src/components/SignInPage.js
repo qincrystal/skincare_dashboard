@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import SignInForm from "./SignInForm.js";
 class SignInPage extends Component {
   state = {};
   render() {
     return (
       <div>
         <div> SkinCare Dashboard</div>
-        <img> icon</img>
         <SignInForm> </SignInForm>
       </div>
     );
