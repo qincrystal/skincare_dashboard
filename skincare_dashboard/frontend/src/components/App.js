@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 class App extends Component {
   state = {};
   render() {
-    return <div>React App</div>;
+    return <div>Test App</div>;
   }
 }
 
