@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Test App
+        testing edit
         <SignInPage></SignInPage>
       </div>
     );

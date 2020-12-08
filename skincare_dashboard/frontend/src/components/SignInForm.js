@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import firebase from "firebase";
+
 class SignInForm extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,7 @@ class SignInForm extends Component {
     this.emailChange = this.emailChange.bind(this);
     this.passWordChange = this.passwordChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onCreate = this.onCreate.bind(this);
   }
 
   emailChange(e) {
@@ -23,6 +26,29 @@ class SignInForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     console.log(`${this.state.email} ${this.state.password}`);
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    .then((user) => {
+      console.log('signed in');
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log('failed to sign in');
+    });
+  }
+
+  onCreate(e) {
+    e.preventDefault();
+    console.log(`${this.state.email} ${this.state.password}`);
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .then((user) => {
+      console.log('created account');
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log('failed to create account');
+    });
   }
 
   render() {
@@ -41,7 +67,8 @@ class SignInForm extends Component {
             onChange={(e) => this.passwordChange(e)}
           ></input>
           <button onClick={this.onSubmit}>Submit</button>
-        </form>
+          <button onClick={this.onCreate}>Create account</button>
+	</form>
       </div>
     );
   }
