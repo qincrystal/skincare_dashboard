@@ -28,7 +28,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div>
-        <div className="montserrat">Sign In</div>
+        <div>Sign In</div>
         <form>
           <input
             type="text"

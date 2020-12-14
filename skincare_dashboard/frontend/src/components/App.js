@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import SignInPage from "./SignInPage";
+import styles from "../css/fonts.css";
 import firebase from "firebase";
+import Homepage from "./Homepage";
 
 firebase.initializeApp({
   apiKey: "AIzaSyBzIN0CwepDFNA_pCAExFSHlx8wtIa01Oc",
@@ -16,12 +18,12 @@ firebase.initializeApp({
 
 class App extends Component {
   state = {};
-  firebaseApp = firebase.apps[0];
+
   render() {
     return (
       <div>
         Test App
-        <SignInPage></SignInPage>
+        <SignInPage />
       </div>
     );
   }
