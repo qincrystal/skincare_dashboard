@@ -22,8 +22,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        Test App
-        <SignInPage />
+        testing edit
+        <SignInPage></SignInPage>
       </div>
     );
   }
